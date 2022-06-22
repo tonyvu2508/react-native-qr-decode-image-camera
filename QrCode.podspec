@@ -5,10 +5,10 @@ Pod::Spec.new do |s|
   s.description = "some interesting summary. 123123"
   s.license     = { :type => "MIT", :file => "LICENSE" }
   s.homepage    = "https://github.com/deepanrajkumar/react-native-qr-decode-image-camera#readme"
-  s.source      = { :git => "https://github.com/deepanrajkumar/react-native-qr-decode-image-camera.git", :tag => "#{s.version}" }
+  s.source      = { :git => "https://github.com/tonyvu2508/react-native-qr-decode-image-camera.git" }
   s.author      = "Igor"
   s.platform    = :ios, "9.0"
   s.source_files    = "ios/QrCode/", "ios/QrCode/*.{h,m}"
-  s.frameworks       = ["UIKit", "AVFoundation", "CoreImage"]
+  s.frameworks       = ["UIKit", "AVFoundation", "CoreImage", "MLImage", "MLKit"]
   s.dependency 'React'
 end
