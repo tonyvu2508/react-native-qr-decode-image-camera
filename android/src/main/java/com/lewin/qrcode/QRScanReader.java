@@ -9,6 +9,8 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -57,12 +59,16 @@ public class QRScanReader extends ReactContextBaseJavaModule  {
                         public void onSuccess(List<Barcode> barcodes) {
                             Log.d("OK", " " +  barcodes.toString());
                             List<String> rawValues = new LinkedList<>();
+                            WritableMap map = Arguments.createMap();
+                            int i = 1;
                             for (Barcode barcode: barcodes) {
                                 String rawValue = barcode.getRawValue();
                                 rawValues.add(rawValue);
+                                map.putString(String.valueOf(i),rawValue);
+                                i++;
                             }
                             scanner.close();
-                            promise.resolve(rawValues.get(0));
+                            promise.resolve(map);
 
                         }
                     })
