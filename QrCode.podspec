@@ -9,6 +9,8 @@ Pod::Spec.new do |s|
   s.author      = "Igor"
   s.platform    = :ios, "9.0"
   s.source_files    = "ios/QrCode/", "ios/QrCode/*.{h,m}"
-  s.frameworks       = ["UIKit", "AVFoundation", "CoreImage", "MLImage", "MLKit"]
+  s.frameworks       = ["UIKit", "AVFoundation", "CoreImage"]
   s.dependency 'React'
+  s.dependency 'MLImage'
+  s.dependency 'MLKit'
 end
