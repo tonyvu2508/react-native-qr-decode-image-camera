@@ -11,6 +11,4 @@ Pod::Spec.new do |s|
   s.source_files    = "ios/QrCode/", "ios/QrCode/*.{h,m}"
   s.frameworks       = ["UIKit", "AVFoundation", "CoreImage"]
   s.dependency 'React'
-  s.dependency 'MLImage'
-  s.dependency 'MLKit'
 end
