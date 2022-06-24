@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.platform    = :ios, "9.0"
   s.source_files    = "ios/QrCode/", "ios/QrCode/*.{h,m}"
   s.frameworks       = ["UIKit", "AVFoundation", "CoreImage"]
+  s.subspec "BarcodeDetectorMLKit" do |ss|
+    ss.dependency 'GoogleMLKit/BarcodeScanning'
+  end
   s.dependency 'React'
-  s.dependency 'MLKit'
-  s.dependency 'MLImage'
 end
